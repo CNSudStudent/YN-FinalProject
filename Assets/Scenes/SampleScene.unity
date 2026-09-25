@@ -657,6 +657,7 @@ MonoBehaviour:
   jumpStrength: 4
   alwaysJumping: 0
   extraJump: 2
+  extrajumpdelay: 0.1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
