@@ -225,7 +225,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -335,6 +335,53 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1304012574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304012576}
+  - component: {fileID: 1304012575}
+  m_Layer: 0
+  m_Name: Mech. Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1304012575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304012574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c168230c193dd1545bdf10aad86a53ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigon: 0
+  maxtrigon: 0
+  istriggeron: 0
+--- !u!4 &1304012576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304012574}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.004201, y: -1.0438504, z: 7.473238}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -467,8 +514,8 @@ Transform:
   m_GameObject: {fileID: 1397606507}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -2, z: 0}
-  m_LocalScale: {x: 25.71522, y: 4.785, z: 1}
+  m_LocalPosition: {x: -6.911518, y: -0.2805748, z: 0}
+  m_LocalScale: {x: 25.71522, y: 1.7848232, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -488,6 +535,7 @@ GameObject:
   - component: {fileID: 1865068486}
   - component: {fileID: 1865068491}
   - component: {fileID: 1865068492}
+  - component: {fileID: 1865068493}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -658,6 +706,42 @@ MonoBehaviour:
   alwaysJumping: 0
   extraJump: 2
   extrajumpdelay: 0.1
+--- !u!114 &1865068493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865068485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dbc5c3e1a4e8b439a7f3eb6f61ce79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigon: {fileID: 1304012575}
+  maxtrigon: {fileID: 1304012575}
+  istriggeron: {fileID: 1304012575}
+  hoveroverthisname: 0
+  Scorpian: 0
+  Kogetsu: 0
+  Raygust: 0
+  SMG: 0
+  Handgun: 0
+  Shotguns: 0
+  AR: 0
+  Shooter: 0
+  Asteroid: 0
+  Hound: 0
+  Meteor: 0
+  Viper: 0
+  Egrett: 0
+  Ibis: 0
+  Lighting: 0
+  Sheild: 0
+  Bagworm: 0
+  Grasshopper: 0
+  Chameleon: 0
+  Idaten: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -666,3 +750,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1397606511}
   - {fileID: 1865068490}
+  - {fileID: 1304012576}
