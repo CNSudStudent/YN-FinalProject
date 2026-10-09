@@ -1,10 +1,10 @@
 using UnityEngine;
 using NaughtyAttributes;
 
-public class Trigger : MonoBehaviour
+public class Triggerwip : MonoBehaviour
 {
-    public TrigonTriggerMechanaics trigon;
-    public TrigonTriggerMechanaics maxtrigon;
+    public TrigonTriggerMechanaics trion;
+    public TrigonTriggerMechanaics maxtrion;
     public TrigonTriggerMechanaics istriggeron;
     [Tooltip("You can find the pros and cons of each weapons if you hover over their name")]
     public bool hoveroverthisname;

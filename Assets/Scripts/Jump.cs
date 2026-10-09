@@ -90,17 +90,17 @@ public class Jump : MonoBehaviour
                 
             }
         }
-        if ((extraJump > 0) && (!canJump) && Input.GetButton("Jump") && (extrajumpdelay == 0) && (delaybetweenjumps == 0))
-        {
+        //if ((extraJump > 0) && (!canJump) && Input.GetButton("Jump") && (extrajumpdelay == 0) && (delaybetweenjumps == 0))
+        //{
             // Apply an instantaneous upwards force
-            rigidBody.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
+            //rigidBody.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
             //canJump = !checkGround;
-            extraJump -= 1;
-            delaybetweenjumps = 0.1f;
-            isDelayJumpTimerRunning = true;
+            //extraJump -= 1;
+            //delaybetweenjumps = 0.1f;
+            //isDelayJumpTimerRunning = true;
             
 
-        }
+        //}
 
     }
 }
