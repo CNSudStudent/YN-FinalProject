@@ -16,7 +16,7 @@ public class TrigonTriggerMechanaics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && (trion > 0f))
+        if (Input.GetKeyDown("WeaponToggle") && (trion > 0f))
         {
             istriggeron = true;
         }
