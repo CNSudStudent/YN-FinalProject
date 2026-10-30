@@ -1,15 +1,17 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using NaughtyAttributes;
 
 public enum mainWeapon1ENUM
 {
- Kogetsu,
- Raygust,
- SMG,    
- Handgun,
- Shotgun,
- AR,     
- Shooter
+ kogetsu,
+ raygust,
+ scorpian,
+ smg,    
+ handgun,
+ shotgun,
+ a4,     
+ shooter
 }
 public class Triggerwip : MonoBehaviour
 {
@@ -17,32 +19,38 @@ public class Triggerwip : MonoBehaviour
     public TrigonTriggerMechanaics maxtrion;
     public TrigonTriggerMechanaics istriggeron;
 
+    public InputActionMap weaponsMap;
+
     //Settings
     private int triggersOn;
     
+    public GameObject Weapons;
+    public GameObject SCW_1;
+    public GameObject SCW_2;
+    public GameObject Kogetsu;
     [SerializeField] public mainWeapon1ENUM mainWeapon1;
-    //private bool mainWeapon1;
+    private bool mainWeapon1On;
 
-    private bool mainWeapon2;
+    private bool mainWeapon2On;
 
-    private bool mainWeapon3;
+    private bool mainWeapon3On;
 
-    private bool mainWeapon4;
+    private bool mainWeapon4On;
 
-    private bool secondaryWeapon1;
+    private bool secondaryWeapon1On;
 
-    private bool secondaryWeapon2;
+    private bool secondaryWeapon2On;
 
-    private bool secondaryWeapon3;
+    private bool secondaryWeapon3On;
 
-    private bool secondaryWeapon4;
+    private bool secondaryWeapon4On;
 
     [Tooltip("You can find the pros and cons of each weapons if you hover over their name")]
     public bool hoveroverthisname;
 
-    public bool Scorpian;//instant shape-shifting,weightless, but fragile
-    private gameObject SCW_1;
-    private gameObject SCW_2;
+    /*public bool Scorpian;//instant shape-shifting,weightless, but fragile
+    private GameObject SCW_1;
+    private GameObject SCW_2;
 
     public bool Kogetsu;//Max dura, highest sharpness, but fixed weight
 
@@ -81,52 +89,71 @@ public class Triggerwip : MonoBehaviour
 
     public bool Chameleon;
 
-    public bool Idaten;
+    public bool Idaten;*/
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         triggersOn = 0;
-        Scorpian = false;
-        Kogetsu = false;
+        mainWeapon1On = false;
+        mainWeapon2On = false;
+        mainWeapon3On = false;
+        mainWeapon4On = false;
+        secondaryWeapon1On = false;
+        secondaryWeapon2On = false;
+        secondaryWeapon3On = false;
+        secondaryWeapon4On = false;
         mainWeapon1 = mainWeapon1ENUM.scorpian;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("MainWeapon1") && istriggeron && trion >= 10)
+        if(Input.GetKeyDown("MainWeapon1") && istriggeron)
         {
-            MainWeapon1Config();
+            mainWeapon1On = true;
+            MainWeaponConfig();
+            
 
         }
         if(Input.GetKeyDown("MainWeapon2") && istriggeron)
         {
-            mainWeapon2 = !mainWeapon2;
+           /* mainWeapon2 = !mainWeapon2;
             mainWeapon1 = false;
             mainWeapon3 = false;
             mainWeapon4 = false;
+            */
         }
         if(Input.GetKeyDown("MainWeapon3") && istriggeron)
         {
-            mainWeapon3 = !mainWeapon3;
+           /* mainWeapon3 = !mainWeapon3;
             mainWeapon1 = false;
             mainWeapon2 = false;
             mainWeapon4 = false;
+            */
         }
         if(Input.GetKeyDown("MainWeapon4") && istriggeron)
         {
-            mainWeapon4 = !mainWeapon4;
+           /* mainWeapon4 = !mainWeapon4;
             mainWeapon1 = false;
             mainWeapon2 = false;
             mainWeapon3 = false;
+            */
         }
     }
-    void MainWeapon1Config()
+    void MainWeaponConfig()
     {
-        if(mainWeapon1 = mainWeapon1ENUM.scorpian)
+        if(!istriggeron)
         {
-            Scorpian = true;
+            Weapons.SetActive(false);
+        }
+        else if(mainWeapon2On || mainWeapon3On || mainWeapon4On)
+        {
+            mainWeapon1On = false;
+        }
+        else if(mainWeapon1 == mainWeapon1ENUM.kogetsu)
+        {
+            Kogetsu.SetActive(true);
             triggersOn += 1;
         }
     }

@@ -934,7 +934,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 260047770}
-  - component: {fileID: 260047769}
   m_Layer: 0
   m_Name: Button Manager
   m_TagString: Untagged
@@ -942,18 +941,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &260047769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260047768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0db93e1957e97a84ba7534c578b3e80f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &260047770
 Transform:
   m_ObjectHideFlags: 0
@@ -4291,6 +4278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1304012576}
   - component: {fileID: 1304012575}
+  - component: {fileID: 1304012577}
   m_Layer: 0
   m_Name: Mech. Manager
   m_TagString: Untagged
@@ -4310,9 +4298,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c168230c193dd1545bdf10aad86a53ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponsMap: {fileID: 0}
   trion: 0
   maxtrion: 1
   istriggeron: 0
+  regenTrionPerSecond: 5
+  regenInterval: 1
+  trionDepletionPer5Seconds: 1
+  depletionInterval: 5
+  trionDepletionTimer: 0
 --- !u!4 &1304012576
 Transform:
   m_ObjectHideFlags: 0
@@ -4328,6 +4322,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1304012577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304012574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a98494a1abab488795508d492bd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trion: {fileID: 1304012575}
+  maxtrion: {fileID: 1304012575}
+  istriggeron: {fileID: 1304012575}
+  weaponsMap:
+    m_Name: Weapons Map
+    m_Id: 645d15de-395a-438c-96ad-b3769e5cac38
+    m_Asset: {fileID: 0}
+    m_Actions:
+    - m_Name: MainWeapon1
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 9cec2ecd-b5a0-4cba-aef0-04a2432ad8a3
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Bindings:
+    - m_Name: 
+      m_Id: a735d8b7-8dbe-4b3a-a29d-e4b2383f37ab
+      m_Path: <Keyboard>/1
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: MainWeapon1
+      m_Flags: 0
+  Weapons: {fileID: 477405140}
+  SCW_1: {fileID: 2135755007}
+  SCW_2: {fileID: 1211837362}
+  Kogetsu: {fileID: 226706285}
+  mainWeapon1: 0
+  hoveroverthisname: 0
 --- !u!1 &1311965993
 GameObject:
   m_ObjectHideFlags: 0

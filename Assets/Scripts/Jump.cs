@@ -140,7 +140,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    [Header("Hollow Knight Movement")]
+    [Header("Movement")]
     public float moveSpeed = 10f; // Instant max speed, no slippery acceleration
     private float horizontalInput;
     private Rigidbody2D rb;
@@ -157,7 +157,7 @@ public class Jump : MonoBehaviour
     public LayerMask whatIsGround;
     public LayerMask whatIsPlatform; // New: Dedicated layer for platforms
 
-    [Header("Mantis Claw Wall Slide")]
+    [Header("Wall Slide")]
     public Transform leftWallCheck;
     public Transform rightWallCheck;
     public LayerMask whatIsWall;
@@ -166,7 +166,7 @@ public class Jump : MonoBehaviour
     private bool isTouchingRightWall;
     private bool isWallSliding;
 
-    [Header("Mantis Claw Wall Jump")]
+    [Header("Wall Jump")]
     public float wallJumpForceX = 14f;
     public float wallJumpForceY = 16f;
     public float wallJumpDuration = 0.15f; // Duration player control is locked
@@ -266,7 +266,7 @@ public class Jump : MonoBehaviour
             }
         }
 
-        // 5. Hollow Knight Variable Jump Height (The Secret Sauce)
+        // 5.Variable Jump Height (The Secret Sauce)
         if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
@@ -306,9 +306,6 @@ public class Jump : MonoBehaviour
 
     void StopWallJumpControlLock()
     {
-        if(extraJumpWallReset <=0)
-        {
-            isWallJumping = false;
-        }
+        isWallJumping = false;
     }
 }

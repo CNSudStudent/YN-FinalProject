@@ -1,0 +1,41 @@
+using UnityEngine;
+
+public class Regeneration : MonoBehaviour
+{
+    [Header("Health Settings")]
+    public float currentHealth = 50f;
+    public float maxHealth = 100f;
+
+    [Header("Regen Cooldown Settings")]
+    public float regenAmountPerSecond = 5f;
+    public float regenInterval = 1f; // How often it ticks (e.g., 1.0s)
+    
+    private float timer = 0f;
+
+    void Update()
+    {
+        // Only run the timer if we actually need healing
+        if (currentHealth < maxHealth)
+        {
+            // 1. Accumulate real time passed since the last frame
+            timer += Time.deltaTime;
+
+            // 2. Check if the cooldown interval has met or exceeded
+            if (timer >= regenInterval)
+            {
+                ExecuteRegeneration();
+
+                // 3. Subtract the interval instead of setting to 0. 
+                // This preserves any leftover overflow time for perfect accuracy.
+                timer -= regenInterval; 
+            }
+        }
+    }
+
+    void ExecuteRegeneration()
+    {
+        currentHealth += regenAmountPerSecond;
+        currentHealth = Mathf.Min(currentHealth, maxHealth); // Clamp to max health
+        Debug.Log($"Regenerated! Current Health: {currentHealth}");
+    }
+}
